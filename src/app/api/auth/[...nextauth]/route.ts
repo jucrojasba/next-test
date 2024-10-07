@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 const handler = NextAuth({
@@ -6,34 +6,31 @@ const handler = NextAuth({
         CredentialsProvider({
             name: "Credentials",
             credentials: {
-                email: { label: "Username", type: "text", placeholder: "jsmith" },
+                username: { label: "Username", type: "text", placeholder: "jsmith" },
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/login`, {
+                const res = await fetch("http://192.168.88.39:7000/auth/login", {
                     method: 'POST',
                     headers: {
                         'Content-type': 'Application/json'
                     },
                     body: JSON.stringify({
-                        email: credentials?.email,
+                        username: credentials?.username, 
                         password: credentials?.password
                     })
-                })
+                });
 
-                const user = await res.json();
+                const data = await res.json();
 
-                console.log(user);
-
-                if (user.message == "User found") {
-                    console.log("melo");
-                    // Any object returned will be saved in `user` property of the JWT
-                    return user
+                if (res.ok && data.access_token) {
+                    return {
+                        ...data.user,  
+                        accessToken: data.access_token  
+                    };
                 } else {
-                    // If you return null then an error will be displayed advising the user to check their details.
-                    return null
-
-                    // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+                    console.log("Login fallido");
+                    return null; 
                 }
             }
         })
@@ -44,13 +41,18 @@ const handler = NextAuth({
 
     callbacks: {
         async jwt({ token, user }) {
-            return { ...token, ...user };
+            if (user) {
+                token.accessToken = user.accessToken;  
+                token.user = user;
+            }
+            return token;
         },
         async session({ session, token }) {
-            session.user = token as any;
+            session.user = token.user as any;  
+            session.accessToken = token.accessToken as string;  
             return session;
         },
     },
-})
+});
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };

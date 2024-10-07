@@ -19,6 +19,12 @@
     "confirm": "Confirm password",
     "signup": "Sign up",
     "messageSuccesfully":"User create succesfully"
-}
+    },
+    "Login":{
+        "username":"Username",
+        "password":"Password",
+        "login":"Login"
+        
+    }
 
 }

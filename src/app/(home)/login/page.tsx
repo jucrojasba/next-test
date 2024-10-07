@@ -5,9 +5,11 @@ import Main from "@/components/Main/Main"
 import Button from "@/components/UI/Button/Button"
 import Input from "@/components/UI/Input/Input"
 import { signIn } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 
-const Signup = ()=>{
+const Login = ()=>{
+    const t = useTranslations('Login');
     const router = useRouter()
     const handleSumbit = async(event: React.FormEvent<HTMLFormElement>)=>{
         event.preventDefault();
@@ -21,27 +23,21 @@ const Signup = ()=>{
 
         try{
             const response = await signIn("credentials", user);
-            if(response?.ok){
-                router.push("/store")
-            }else{
-                alert("Credenciales invalidas")
-                event.currentTarget.reset();
-            }
+            console.log(response);
             
         }catch{
             console.log("No se pudo acceder")
-            event.currentTarget.reset();
         }
     }
     return(
         <>
             <Main>
-                <h1 className="login_h1">Iniciar sesión</h1>
+                <h1 className="login_h1">{t("login")}</h1>
                 <section className='form_section'>
                     <Form onSubmit={handleSumbit}>
-                        <Input placeholder='Correo electronico' type='email' name='email'/>
-                        <Input placeholder='Contraseña' type='password' name='password'/>
-                        <Button>Iniciar sesión</Button>
+                        <Input placeholder={t("username")} type='text' name='email'/>
+                        <Input placeholder={t("password")} type='password' name='password'/>
+                        <Button>{t("login")}</Button>
                     </Form>
                 </section>
                 
@@ -50,4 +46,4 @@ const Signup = ()=>{
     )
 }
 
-export default Signup
+export default Login

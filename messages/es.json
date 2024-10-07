@@ -19,5 +19,12 @@
         "confirm":"Comfirmar contraseña",
         "signup":"Registrarse",
         "messageSuccesfully":"Usuario creado con èxito"
+    },
+    "Login":{
+        "username":"Nombre de usuario",
+        "password":"Contraseña",
+        "login":"Iniciar sesión"
+        
     }
+    
 }
