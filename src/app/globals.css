@@ -2,34 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --blue-dark: #0C1F2C;
+  --blue: #205375;
+  --medium-blue: #1E4B6D;
+  --soft-blue: #4B8DA8;
+  --pale-blue: #A1D3E0;
+  --very-light-blue: #E5F7FB;
+  --orange: #F66B0E;
+  --orange-hover: rgba(246, 107, 14, 0.9);
+  --gray: #D9D9D9;
+  --border-gray: #D1D5DB;
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #EFEFEF;
+}
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-:root {
-  --white: #ffffff;
-  --black: #0f0f0f;
-  --grey: #252323;
-}
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */

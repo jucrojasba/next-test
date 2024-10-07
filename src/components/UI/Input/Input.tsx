@@ -1,26 +1,24 @@
-import React from "react";
-import { InputContainer, Label, InputStyled, InputWrapper } from "./Input-style";
-import { IInput } from "../../../types/IInput";
+import React from 'react';
+import { InputStyle } from './InputStyle';
 
-
-const Input: React.FC<IInput> = ({ label, type, placeholder, required, id, value, onChange, name, key, maxLength }) => {
-    return (
-        <InputContainer key={key}>
-            <Label htmlFor={id}>{label}</Label>
-            <InputWrapper>
-                <InputStyled 
-                    type={type} 
-                    placeholder={placeholder}
-                    id={id} 
-                    value={value} 
-                    name = {name}
-                    maxLength={maxLength}                    
-                    onChange={onChange} 
-                    {...(required && { required })}
-                />
-            </InputWrapper>
-        </InputContainer>
-    );
+interface InputProps {
+  placeholder: string;
+  type: string;
+  name: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default Input;
+const Input: React.FC<InputProps> = ({ placeholder, type, name, value, onChange }) => {
+  return (
+    <InputStyle
+      placeholder={placeholder}
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+    />
+  );
+};
+
+export default Input

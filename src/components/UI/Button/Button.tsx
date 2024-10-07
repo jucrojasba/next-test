@@ -1,12 +1,18 @@
-"use client"
+import { ButtonStyle } from "./ButtonStyle";
 
-import { IButton } from "../../../types/IButton";
-import { ButtonStyle } from "./Button-style";
-
-const Button: React.FC<IButton> = ({ children, onClick }) => {
+interface ButtonProps {
+    onClick?: () => void;
+    children: React.ReactNode;
+  }
+  
+  const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
     return (
-        <ButtonStyle onClick={onClick}>{children}</ButtonStyle>
-    )
-}
-
-export default Button;
+      <ButtonStyle
+        onClick={onClick}
+      >
+        {children}
+      </ButtonStyle>
+    );
+  };
+  
+  export default Button;

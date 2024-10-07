@@ -1,11 +1,18 @@
-import { getRequestConfig } from "next-intl/server";
-import { cookies } from "next/headers";
+import { getRequestConfig } from 'next-intl/server';
+import { cookies } from 'next/headers';
+
 
 export default getRequestConfig(async () => {
-    const cookieStore = cookies()
-    const locale:string = cookieStore.get("locale")?.value || "en"
+    // Provide a static locale, fetch a user setting,
+    // read from `cookies()`, `headers()`, etc.
+    let language = cookies().get("language")?.value;
+    if (!language) {
+        language = "es"
+    }
+    const locale = language
+
     return {
         locale,
-        messages: (await import (`../../massages/${locale}.json`)).default
-    }
-})
+        messages: (await import(`../../messages/${locale}.json`)).default
+    };
+});

@@ -1,0 +1,13 @@
+{
+    "Home":{
+        "hero": "Descubre todos tus productos favoritos aquí."
+    },
+    "Header":{
+        "home": "Inicio",
+        "login": "Iniciar sesión",
+        "signUp": "Crear una cuenta"
+    },
+    "Footer": {
+        "rights": "Todos los derechos reservados"
+    }
+}
