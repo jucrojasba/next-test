@@ -1,6 +1,6 @@
 {
     "Home":{
-        "hero": "Discover all your favorite products here."
+        "hero": "Find your favorite products in the same place!"
     },
     "Header":{
         "home": "Home",
@@ -9,5 +9,16 @@
     },
     "Footer": {
         "rights": "All rights reserved"
-    }
+    },
+    "SignUp": {
+    "name": "Name",
+    "username": "Username",
+    "email": "Email",
+    "telephone": "Phone",
+    "password": "Password",
+    "confirm": "Confirm password",
+    "signup": "Sign up",
+    "messageSuccesfully":"User create succesfully"
+}
+
 }

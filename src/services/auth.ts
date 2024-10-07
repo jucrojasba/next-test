@@ -15,9 +15,7 @@ export const signUp = async (user: IUser) => {
 
     console.log(data.message);
 
-    if (response.status === 400) {
-        alert("Usuario ya existe")
-    } else if (!response.ok) {
+   if (!response.ok) {
         alert("No se pudo agregar usuario");
         throw Error("No se pudo agregar usuario")
     }

@@ -1,13 +1,23 @@
 {
     "Home":{
-        "hero": "Descubre todos tus productos favoritos aquí."
+        "hero": "Encuentra tus productos favoritos en el mismo lugar!"
     },
     "Header":{
         "home": "Inicio",
         "login": "Iniciar sesión",
-        "signUp": "Crear una cuenta"
+        "signUp": "Registrarse"
     },
     "Footer": {
         "rights": "Todos los derechos reservados"
+    },
+    "SignUp":{
+        "name":"Nombre",
+        "username":"Nombre de usuario",
+        "email":"Correo Electronico",
+        "telephone":"Telèfono",
+        "password":"Contraseña",
+        "confirm":"Comfirmar contraseña",
+        "signup":"Registrarse",
+        "messageSuccesfully":"Usuario creado con èxito"
     }
 }

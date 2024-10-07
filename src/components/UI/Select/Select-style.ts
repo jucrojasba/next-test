@@ -8,6 +8,7 @@ export const SelectStyle = styled.select`
     background-color: var(--white);
     border: none;
     color: var(--blue-dark);
+    cursor:pointer;
     &:focus {
         outline: none;
     }

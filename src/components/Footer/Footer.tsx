@@ -9,8 +9,8 @@ const Footer = () => {
     return (
         <FooterStyled>
             <ContainerLogo>
-                <Image src="/img/chelsea.png" alt="logo-principal" width={70} height={70} />
-                <Title>Ecommerce next.js</Title>
+                <Image src="/img/logo.png" alt="logo-principal" width={70} height={70} />
+                <Title>Gates Performance Test</Title>
             </ContainerLogo>
             <ContainerInfo>
                 <TitleCoppyRight>© Copyright 2024 {t("rights")}</TitleCoppyRight>

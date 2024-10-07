@@ -24,7 +24,7 @@ const Header = ({ children }: PropsWithChildren) => {
     return (
         <HeaderStyle>
             <HeaderSection>
-                <Link href="/"><Image src="/img/chelsea.png" alt="logo-principal" width={70} height={70} /></Link>
+                <Link href="/"><Image src="/img/logo.png" alt="logo-principal" width={70} height={70} /></Link>
             </HeaderSection>
             <HeaderNav>
                 <BurgerButton onClick={() => setIsOpen(true)}>

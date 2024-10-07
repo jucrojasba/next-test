@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderStyle = styled.header`
     width: 100%;
     height: 100px;
-    background-color: var(--blue-dark);
+    background-color: var(--white);
     display: flex;
     position: sticky;
     top:0;
@@ -28,7 +28,7 @@ export const HeaderNav = styled.nav`
 export const HeaderUl = styled.ul`
     display: none;
     gap: 40px;
-    color: var(--white);
+    color: var(--blue-dark);
     font-size: 18px;
     align-items: center;
     @media (min-width: 950px){

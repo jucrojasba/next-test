@@ -4,7 +4,7 @@ import { FaFacebook, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 export const FooterStyled = styled.footer`
     height: 170px;
-    background-color: var(--blue-dark);
+    background-color: var(--white);
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -26,9 +26,9 @@ export const ContainerLogo = styled.div`
 
 export const Title = styled.p`
     font-size: 16px;
-    color: var(--white);
+    color: var(--blue-dark);
     padding-left: 10px;
-    border-left: 2px solid var(--white);
+    border-left: 2px solid var(--blue-dark);
 `
 
 export const ContainerInfo = styled.div`
@@ -39,7 +39,7 @@ export const ContainerInfo = styled.div`
 `
 export const TitleCoppyRight = styled.p`
     font-size: 16px;
-    color: var(--white);
+    color: var(--blue-dark);
     text-align: center;
 `
 
@@ -50,7 +50,7 @@ export const ContainerSocialMedia = styled.div`
 `
 
 const commonIconStyles = `
-color: var(--white);
+color: var(--blue-dark);
 font-size: 25px;
 `
 
